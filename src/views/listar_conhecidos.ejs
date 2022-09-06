@@ -1,0 +1,22 @@
+<%# A linha abaixo carrega no template o conteúdo total do arquivo header.ejs%>
+<%-include('base_header') -%>
+<body>
+    <%-include('link_list_nav') -%>
+        <ul>
+    <% for(var i=0; i< lista_conhecidos.length; ++i) { %>        
+        <li> 
+            <span class="descritor">Nome:</span> <%=lista_conhecidos[i].nome %><br/>
+            <span class="descritor">Idade:</span> <%=lista_conhecidos[i].idade %><br/>
+            <% if(lista_conhecidos[i].idade <= 18){ %>
+                <p1>Novo</p1>
+            <% } else if(lista_conhecidos[i].idade <= 40){ %>
+                <p1>Semi-Novo</p1>
+            <% } else { %>
+                <p1>Velho</p1>
+            <% } %>            
+        </li> 
+    <% } %>
+    </ul>
+</body>
+<%# A linha abaixo carrega no template o conteúdo total do arquivo footer.ejs %>
+<%- include('base_footer') -%>
